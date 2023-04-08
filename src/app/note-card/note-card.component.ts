@@ -5,6 +5,8 @@ import {
   Renderer2,
   AfterViewInit,
   Input,
+  Output,
+  EventEmitter,
 } from '@angular/core';
 
 @Component({
@@ -15,6 +17,8 @@ import {
 export class NoteCardComponent implements AfterViewInit {
   @Input() title: string = '';
   @Input() body: string = '';
+
+  @Output('delete') deleteEvent: EventEmitter<void> = new EventEmitter<void>(); 
 
   @ViewChild('truncator', { static: true }) truncator!: ElementRef<HTMLElement>;
   @ViewChild('bodyText', { static: true }) bodyText!: ElementRef<HTMLElement>;
@@ -30,5 +34,9 @@ export class NoteCardComponent implements AfterViewInit {
     } else {
       this.renderer.setStyle(this.truncator.nativeElement, 'display', 'none');
     }
+  }
+
+  onXButtonClick() {
+    this.deleteEvent.emit();
   }
 }
