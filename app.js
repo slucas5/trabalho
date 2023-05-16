@@ -3,7 +3,7 @@ var app = express();
 var port = process.env.PORT || 3000;
 var bodyParser = require("body-parser");
 const sqlite3 = require("sqlite3").verbose();
-const DBPATH = "notas.db";
+const DBPATH = "./notas.db";
 var db = new sqlite3.Database(DBPATH);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -19,7 +19,7 @@ app.post("/dado", function (req, res) {
   let titulo = req.body.titulo;
   let conteudo = req.body.conteudo;
 
-  let sql = `INSERT INTO Usuarios (titulo, conteudo) VALUES($"${titulo}", "${conteudo}")`;
+  let sql = `INSERT INTO notas (titulo, conteudo) VALUES ("${titulo}", "${conteudo}")`;
   db.all(sql, [], (err, rows) => {
     if (err) {
       console.log("passei aqui 1");
@@ -34,7 +34,7 @@ app.post("/dado", function (req, res) {
 app.get("/tudo", function (req, res) {
   res.header("Access-Control-Allow-Origin", "*");
   console.log("Estou aqui!");
-  db.all(`SELECT * FROM Usuarios`, [], (err, rows) => {
+  db.all(`SELECT * FROM notas.db`, [], (err, rows) => {
     if (err) {
       console.log("aqui 2");
       res.send(err);

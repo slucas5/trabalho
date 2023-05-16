@@ -9,7 +9,7 @@ import * as $ from 'jquery';
 export class AppComponent {
   title = 'notes-frontend';
   Conectar() {
-    $.get('https://vgdwz4-3000.csb.app:3000', function (resultado) {
+    $.get('https://localhost:3000', function (resultado) {
       console.log(resultado);
     });
   }
@@ -19,7 +19,7 @@ export class AppComponent {
       conteudo: conteudo,
     };
 
-    $.post('https://vgdwz4-3000.csb.app:3000/dado', json, function (msg) {
+    $.post('https://localhost:3000/dado', json, function (msg) {
       console.log(msg);
     });
   }
@@ -28,7 +28,7 @@ export class AppComponent {
     this.valor = valorCaixa;
   }
   Clicando() {
-    $.get('https://vgdwz4-3000.csb.app:3000/tudo', (resultado) => {
+    $.get('https://localhost:3000/tudo', (resultado) => {
       this.valor = JSON.stringify(resultado);
     });
   }
