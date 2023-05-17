@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Note } from './note.model';
+import * as $ from 'jquery';
+
 
 @Injectable({
   providedIn: 'root'
@@ -10,9 +12,15 @@ export class NotesService {
 
   constructor() { }
 
+  
+
   getAll(){
-    return this.notes;
-  }
+  $.get('http://localhost:3000/tudo', (resultado) => {
+    this.notes = (resultado);
+    console.log(this.notes)
+    })
+      return this.notes;
+    }
 
   get(id: number){
     return this.notes[id];

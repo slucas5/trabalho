@@ -3,7 +3,8 @@ import { NgForm } from "@angular/forms";
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Note } from 'src/app/shared/note.model';
 import { NotesService } from 'src/app/shared/notes.service';
-
+import { AppComponent } from 'src/app/app.component';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-note-details',
@@ -17,6 +18,8 @@ export class NoteDetailsComponent implements OnInit{
   new!: boolean;
 
   constructor(private notesService: NotesService, private router: Router, private route: ActivatedRoute) {}
+
+
 
   ngOnInit() {
     this.route.params.subscribe((params: Params) => {
@@ -48,6 +51,17 @@ export class NoteDetailsComponent implements OnInit{
     this.router.navigateByUrl('/');
   }
 
+  EnviarDados(title: string, body: string) {
+    var json = {
+      title: title,
+      body: body,
+    }
+
+    console.log('entrou')
+    $.post('http://localhost:3000/dado', json, function (msg) {
+      console.log(msg);
+    });
+
 }
 
-
+}

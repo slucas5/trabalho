@@ -9,17 +9,17 @@ import * as $ from 'jquery';
 export class AppComponent {
   title = 'notes-frontend';
   Conectar() {
-    $.get('https://localhost:3000', function (resultado) {
+    $.get('http://localhost:3000', function (resultado) {
       console.log(resultado);
     });
   }
-  EnviarDados(titulo: string, conteudo: string) {
+  EnviarDados(title: string, body: string) {
     var json = {
-      titulo: titulo,
-      conteudo: conteudo,
+      title: title,
+      body: body,
     };
 
-    $.post('https://localhost:3000/dado', json, function (msg) {
+    $.post('http://localhost:3000/dado', json, function (msg) {
       console.log(msg);
     });
   }
@@ -28,7 +28,7 @@ export class AppComponent {
     this.valor = valorCaixa;
   }
   Clicando() {
-    $.get('https://localhost:3000/tudo', (resultado) => {
+    $.get('http://localhost:3000/tudo', (resultado) => {
       this.valor = JSON.stringify(resultado);
     });
   }

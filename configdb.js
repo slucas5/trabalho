@@ -5,7 +5,7 @@ import { open } from "sqlite3";
 
 export async function openUserDB() {
   return open({
-    filename: "./notas.db",
+    filename: "./teste.db",
     driver: pkg.Database,
   });
 }
