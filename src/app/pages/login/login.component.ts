@@ -8,6 +8,6 @@ import { Component } from '@angular/core';
 export class LoginComponent {
   
   goToHome(){
-    window.location.href ="/home"
+    window.location.href ="/"
   }
 }

@@ -8,11 +8,11 @@ import {RegisterComponent} from './pages/register/register.component'
 import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
-    { path: '', component: LoginComponent },
+    { path: 'login', component: LoginComponent },
     {path: 'register', component: RegisterComponent },
     {path: 'forgot-password', component: ForgotPasswordComponent},
-    {path: 'home', component: MainLayoutComponent, children: [
-    {path: 'home/', component: NotesListComponent },
+    {path: '', component: MainLayoutComponent, children: [
+    {path: '', component: NotesListComponent },
     {path: 'new', component: NoteDetailsComponent},
     {path: ':id', component: NoteDetailsComponent},
     { path: 'edit/:id', component: NoteDetailsComponent },
