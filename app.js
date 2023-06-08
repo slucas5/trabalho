@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", function (req, res) {
   res.header("Access-Control-Allow-Origin", "*");
-  res.send("Olá Lucas!");
+  res.send("Olá");
 });
 
 app.post("/dado", function (req, res) {
@@ -28,7 +28,7 @@ app.post("/dado", function (req, res) {
       console.log("passei aqui 1");
       res.send(err);
     } else {
-      console.log("Deu certo amigão");
+      console.log("Deu certo");
       res.send("Nota adicionado.");
     }
   });
