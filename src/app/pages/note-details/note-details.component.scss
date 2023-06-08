@@ -5,6 +5,16 @@
     margin-top: 50px;
 }
 
+.field{
+  width: 90%;
+  margin-left: 20px;
+}
+
+.field-bottom{
+  display: flex;  
+  margin-right: 20px
+}
+
 input, textarea{
 
     &.ng-invalid.ng-touched{

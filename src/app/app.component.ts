@@ -7,7 +7,7 @@ import * as $ from 'jquery';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'notes-frontend';
+  title = 'notes-master';
   Conectar() {
     $.get('http://localhost:3000', function (resultado) {
       console.log(resultado);
