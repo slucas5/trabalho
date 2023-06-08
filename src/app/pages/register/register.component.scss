@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     position: absolute;
-    top: 19.1%;
+    top: 19%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 50px;
@@ -24,59 +24,76 @@
 }
 
 .card {
-   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 40%;
-  max-width: 800px;
-  min-width: 400px;
-  height: 49%;
-  padding:20px;
   display: flex;
   align-items: center;
   justify-content: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 90%;
+  min-width: 90%;
+  width: 90%;
+  height: 72%;
   background-color: rgba(230, 230, 230, 1);
   box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
   border: 0.1px solid rgb(182, 182, 182);
   border-radius: 50px;
 }
 
-.card-title {
-    text-align: center;
-    margin-bottom: 0px;
+.main-title{
+  font-weight: bolder;
+  color: black;
+  font-size: 1.15em;
+  padding-bottom: 10px;
 }
 
 .login-form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 15px;
 }
 
 .login-form input {
-    margin:10px;
-    width: 120%;
-    height: 35px;
-    padding:10px;
+    width: 100%;
+    height: 40px;
+    padding:8.5px;
     border:none;
-    border-radius:5px;
+    border-radius:10px;
     box-shadow:
         inset 0px -2px #c7c7c7,
         0px 0px 5px rgba(0,0,0,0.1);
 }
 
 .login-form input[name="username"] {
-    margin-bottom: 8px;
+    margin-bottom: 18px;
+}
+
+.login-form input[name="email"] {
+    margin-bottom: 18px;
+}
+
+.login-form input[name="password"] {
+    margin-bottom: 18px;
+}
+
+.login-form input[name="confirm your password"] {
+    margin-bottom: 18px;
+}
+
+.forgot-password{
+  font-size: 0.8em;
+  color: grey;
+  text-decoration: underline;
+  padding-right: 120px;
 }
 
 .login-form button {
-    margin:10px;
-    margin-top: 25px;
-    padding:px;
-    width: 157%;
+    margin-top: 40px;
+    width: 100%;
     height: 50px;
     border:none;
-    border-radius:5px;
+    border-radius:10px;
     color:white;
     background: linear-gradient(to right, #e0b0ff, #b19cd9, #9370db);
     box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
@@ -89,23 +106,11 @@
     filter: brightness(90%);
 }
 
-.forgot-password {
-    color: gray;
-    text-decoration: underline;
-    align-self: flex-start;
-    margin-top: -8px;
-    margin-left: -70px;
-    font-size: 0.9em;
-}
-
 .sign-up {
     text-align: center;
-    margin-top: 20px;
+    padding-top: 10px;
 }
 
 .sign-up a {
     color: #9370db;
 }
-
-
-

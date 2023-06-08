@@ -5,16 +5,18 @@ import { NotesListComponent } from './pages/notes-list/notes-list.component';
 import { NoteDetailsComponent } from './pages/note-details/note-details.component';
 import {ForgotPasswordComponent} from './pages/forgot-password/forgot-password.component'
 import {RegisterComponent} from './pages/register/register.component'
+import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
-  { path: '', component: MainLayoutComponent, children: [
-    {path: '', component: NotesListComponent },
+    { path: '', component: LoginComponent },
+    {path: 'register', component: RegisterComponent },
+    {path: 'forgot-password', component: ForgotPasswordComponent},
+    {path: 'home', component: MainLayoutComponent, children: [
+    {path: 'home/', component: NotesListComponent },
     {path: 'new', component: NoteDetailsComponent},
     {path: ':id', component: NoteDetailsComponent},
     { path: 'edit/:id', component: NoteDetailsComponent },
-    { path: 'login', component: ForgotPasswordComponent },
-    {path: 'register', component: RegisterComponent },
-]}
+    ]},
 ];
 
 @NgModule({
