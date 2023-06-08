@@ -9,16 +9,18 @@
       </div>
     </div>
     <div class="card"> 
-      <form class="login-form">
+      <form class="login-form" action="/register" method="POST">
         <div class="main-title">
-          <h1 class="main-title">Create your new account!</h1>
+          <h1 class="main-title">Crie sua conta!</h1>
         </div>
-        <input type="text" name="username" placeholder="Username" required>
+        <input type="text" name="nome" placeholder="Nome" required>
         <input type="text" name="email" placeholder="Email" required>
-        <input type="password" name="password" placeholder="Password" required>
-        <input type="password" name="password2" placeholder="Confirm your password" required>
-        <button (click)="goToHome()">Register</button>
-        <p class="sign-up">Already have an account? <a routerLink="/login">Sign-in</a></p>
+        <input type="password" name="senha" placeholder="Senha" required>
+        <input type="password" name="confirmpassword" placeholder="Digite a senha novamente" required>
+      <button type="submit" value="Cadastrar" (click)="goToHome()">Registrar</button>  
+     
+
+        <p class="sign-up">Já possui conta? <a routerLink="/login">Clique</a></p>
       </form>
     </div>
   </body>

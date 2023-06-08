@@ -10,11 +10,11 @@
       </div>
     </div>
     <div class="card"> 
-      <form class="login-form">
-        <h1 class="main-title">Welcome back!</h1>
-        <input type="text" name="username" placeholder="Username" required>
-        <input type="password" name="password" placeholder="Password" required>
-        <a routerLink="/forgot-password" class="forgot-password">Forgot your password?</a>
+      <form class="login-form" action="/login" method="POST">
+        <h1 class="main-title">Olá!</h1>
+        <input type="text" name="email" placeholder="Digite seu e-mail" required>
+        <input type="password" name="senha" placeholder="Digite sua senha" required>
+        <a routerLink="/forgot-password" class="forgot-password">Esqueci minha senha.</a>
         <button (click)="goToHome()">Login</button>
         <p class="sign-up">Doesn't have an account? <a routerLink="/register">Sign-up</a></p>
       </form>
